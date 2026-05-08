@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerControll: MonoBehaviour
 {
-    public  float speed = 20f;               //前進・後退する速さ
+    public  float speed = 40f;               //前進・後退する速さ
     private float rotateSpeed = 1.0f;        //回転する速さ
     private CharacterController controller;  //コンポーネントを保存する変数です
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>(); 
+        
+        Debug.Log("実行中");
     }
 
     private void Update()
