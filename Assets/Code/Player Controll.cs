@@ -1,4 +1,4 @@
-//Player Controll
+//Player Controll.cs
 
 using UnityEngine;
 
@@ -17,6 +17,7 @@ public class PlayerControll: MonoBehaviour
 
     private void Update()
     {
+        
         //回転処理
         transform.Rotate(0,Input.GetAxis("Horizontal") * rotateSpeed,0); //GetAxis("Horizontal")は左右入力
 
@@ -25,5 +26,15 @@ public class PlayerControll: MonoBehaviour
         float currentSpeed = speed * Input.GetAxis("Vertical");
 
         controller.SimpleMove(forwad *  currentSpeed);
+
+
+        //マウスの座標取得(テスト)
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Debug.Log("x:" + mousePos.x + "    y:" + mousePos.y);
+        }
+
     }
+
 };
