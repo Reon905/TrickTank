@@ -507,6 +507,7 @@ GameObject:
   - component: {fileID: 821296355}
   - component: {fileID: 821296361}
   - component: {fileID: 821296362}
+  - component: {fileID: 821296363}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -642,6 +643,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &821296363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821296354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff83f665b164de489df05c59e13c2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 3622961840069488844, guid: 6d48c94f7f5431248bb344c4b77c9aa0, type: 3}
+  firePoint: {fileID: 2122968214}
+  bulletSpeed: 80
 --- !u!1 &1003852577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1183,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
