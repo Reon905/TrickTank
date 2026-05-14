@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Player_Head_Control : MonoBehaviour
 {
+    [Header("Rotetion")]
+    [SerializeField] private float rotationOffsetY = 90f;
+
+
+    private void Start()
+    {
+        //マウスカーソルを表示
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;//マウスを表示して自由に動かす
+    }
     private void Update()
     {
         Rotate();//回転を先に実行
+
     }
 
     private void Rotate()
@@ -30,10 +41,13 @@ public class Player_Head_Control : MonoBehaviour
             if (direction != Vector3.zero)
             {
                 Quaternion rotation = Quaternion.LookRotation(direction);//向きを計算
-                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10f);//スムーズに回転
+
+                //Y回転軸オフセット
+                rotation *= Quaternion.Euler(0, rotationOffsetY, 0);
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3f);//スムーズに回転
+
             }
         }
     }
 }
-
-/*マウス座標の取得の仕方*/
