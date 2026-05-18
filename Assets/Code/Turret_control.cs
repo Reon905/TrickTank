@@ -1,10 +1,14 @@
+//Turret_control.cs
+
 using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float bulletSpeed = 80f;
+    public GameObject bulletPrefab;   //バレットのプレハブ化
+    public Transform firePoint;       //発射する場所?
+    public float bulletSpeed = 80f;   //弾の速度
+
+
 
     void Update()
     {
@@ -12,6 +16,8 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
+
+   
     }
 
     void Shoot()
@@ -49,6 +55,6 @@ public class Gun : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         // 速度を与える
-        rb.linearVelocity = direction * bulletSpeed;
+        rb.velocity = direction * bulletSpeed;
     }
 }
