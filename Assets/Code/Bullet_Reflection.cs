@@ -29,17 +29,34 @@ public class Bullet_Reflection :MonoBehaviour
         //壁の法線
         Vector3 normal = contact.normal;//壁の表面の向き
 
-        //現在の進行方向
-        Vector3 direction = rb.velocity;
+        //XZ平面だけ使う(2D化)
+        normal.y = 0;
 
-        //反射方向計算
-        Vector3 reflectd = Vector3.Reflect(direction, normal);//(入射方向＋壁の法線 = 跳ね返る方向)
+        normal.Normalize();
 
-        //少し壁から離す
+        Vector3 velocity = rb.velocity;
+        velocity.y = 0;
+
+        //2D的な反射(XZ平面)
+        Vector3 reflect = Vector3.Reflect(velocity, normal);
+
+        //少し押し戻す
         transform.position += normal * 0.05f;
 
-        //velocity直接代入
-        rb.velocity = reflectd;
+        //速度反映
+        rb.angularVelocity = new Vector3(reflect.x, rb.velocity.y, reflect.z);
+
+        ////現在の進行方向
+        //Vector3 direction = rb.velocity;
+
+        ////反射方向計算
+        //Vector3 reflectd = Vector3.Reflect(direction, normal);//(入射方向＋壁の法線 = 跳ね返る方向)
+
+        ////少し壁から離す
+        //transform.position += normal * 0.05f;
+
+        ////velocity直接代入
+        //rb.velocity = reflectd;
 
         bounceCount++;
 
