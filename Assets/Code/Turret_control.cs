@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bulletPrefab;   //バレットのプレハブ化
+    public GameObject bulletPrefab;   //バレットのプレハブを入れておく変数
     public Transform firePoint;       //発射する場所?
     public float bulletSpeed = 80f;   //弾の速度
 
@@ -16,45 +16,26 @@ public class Gun : MonoBehaviour
         {
             Shoot();
         }
-
    
     }
 
     void Shoot()
     {
-        // マウス位置
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //発射方向(前方向)
+        Vector3 direction = firePoint.forward;
 
-        // Raycast結果
-        RaycastHit hit;
-
-        Vector3 targetPoint;
-
-        // 何かに当たった場合
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            // 当たらなかった場合は遠くに飛ばす
-            targetPoint = ray.GetPoint(100f);
-        }
-
-        // 発射方向
-        Vector3 direction = (targetPoint - firePoint.position).normalized;
-
-        // 弾生成
+        //弾生成
         GameObject bullet = Instantiate(
             bulletPrefab,
             firePoint.position,
-            Quaternion.identity
+            firePoint.rotation
         );
 
-        // Rigidbody取得
+        //Rigidbody取得
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
-        // 速度を与える
-        rb.velocity = direction * bulletSpeed;
+        //前方向へ速度を与える
+        rb.linearVelocity = direction * bulletSpeed;
+
     }
 }

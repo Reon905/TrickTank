@@ -7,9 +7,12 @@ public class Player_Head_Control : MonoBehaviour
     [Header("Rotetion")]
     [SerializeField] private float rotationOffsetY = 90f;
 
+    private Camera mainCamera;
 
     private void Start()
     {
+        mainCamera = Camera.main;
+
         //マウスカーソルを表示
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;//マウスを表示して自由に動かす
@@ -23,7 +26,7 @@ public class Player_Head_Control : MonoBehaviour
     private void Rotate()
     {
         //マウスの位置を取得
-        Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);//地面の平面
         float rayDistance;
 
@@ -35,7 +38,6 @@ public class Player_Head_Control : MonoBehaviour
             //プレイヤーの向きを計算
             Vector3 direction = pointToLook - transform.position;//プレイヤーの位置から交点までの方向
             direction.y = 0;//Y成分を0にして水平面にする
-
 
             //向きを補間してスムーズに回転
             if (direction != Vector3.zero)

@@ -16,6 +16,8 @@ public class Bullet_Reflection :MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
+
         //反射回数制限
         if (bounceCount >= maxBounce)
         {
@@ -34,17 +36,19 @@ public class Bullet_Reflection :MonoBehaviour
 
         normal.Normalize();
 
-        Vector3 velocity = rb.velocity;
+        Vector3 velocity = rb.linearVelocity;
         velocity.y = 0;
 
-        //2D的な反射(XZ平面)
+        //2D的な反射(XZ平面)　　　　　　　弾速維持を明確化
         Vector3 reflect = Vector3.Reflect(velocity, normal);
+
+        reflect = reflect.normalized * velocity.magnitude;
 
         //少し押し戻す
         transform.position += normal * 0.05f;
 
         //速度反映
-        rb.angularVelocity = new Vector3(reflect.x, rb.velocity.y, reflect.z);
+        rb.linearVelocity = new Vector3(reflect.x, rb.linearVelocity.y, reflect.z);
 
         ////現在の進行方向
         //Vector3 direction = rb.velocity;
@@ -61,5 +65,6 @@ public class Bullet_Reflection :MonoBehaviour
         bounceCount++;
 
         Debug.Log("Hit!");
+        Debug.Log("rb.lineaVelocity");
     }
 }

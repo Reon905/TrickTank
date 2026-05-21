@@ -929,9 +929,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1259712434839902029, guid: c7a4037ef20f73f4f93cfa8b805bbf87, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1954735475894872475, guid: c7a4037ef20f73f4f93cfa8b805bbf87, type: 3}
       propertyPath: bulletSpeed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6300213624426758389, guid: c7a4037ef20f73f4f93cfa8b805bbf87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -973,6 +977,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8589990505767373127, guid: c7a4037ef20f73f4f93cfa8b805bbf87, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1003852579}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
