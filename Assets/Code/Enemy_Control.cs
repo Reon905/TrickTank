@@ -3,10 +3,13 @@ using UnityEngine;
 public class Enemy_Control:MonoBehaviour
 {
     private int hp = 3;
+    private float rotateSeed = 0.3f;         //回転速度
+    private CharacterController controller;  //コンポーネント保存
 
     private void Start()
     {
-       
+        controller = GetComponent<CharacterController>();
+        Debug.Log("エネミー実行中");
     }
 
     private void Update()
