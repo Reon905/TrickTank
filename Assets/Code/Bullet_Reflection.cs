@@ -11,20 +11,27 @@ public class Bullet_Reflection :MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();//弾についているRigidbodyを取得する
+
+        Destroy(gameObject, 5f);//弾の残留時間
     }
 
     void OnCollisionEnter(Collision collision)
     {
 
-
-        //反射回数制限
-        if (bounceCount >= maxBounce)
+        //敵に当たると消滅(敵にダメージ)
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
             return;
         }
 
+        //壁以外
+        if(!collision.gameObject.CompareTag("Wall"))
+        {
+            return;
+        }
+        
         //接触点情報
         ContactPoint contact = collision.contacts[0];
 
@@ -49,18 +56,6 @@ public class Bullet_Reflection :MonoBehaviour
 
         //速度反映
         rb.linearVelocity = new Vector3(reflect.x, rb.linearVelocity.y, reflect.z);
-
-        ////現在の進行方向
-        //Vector3 direction = rb.velocity;
-
-        ////反射方向計算
-        //Vector3 reflectd = Vector3.Reflect(direction, normal);//(入射方向＋壁の法線 = 跳ね返る方向)
-
-        ////少し壁から離す
-        //transform.position += normal * 0.05f;
-
-        ////velocity直接代入
-        //rb.velocity = reflectd;
 
         bounceCount++;
 

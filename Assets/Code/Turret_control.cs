@@ -8,8 +8,6 @@ public class Gun : MonoBehaviour
     public Transform firePoint;       //”­Ë‚·‚éêŠ?
     public float bulletSpeed = 80f;   //’e‚Ì‘¬“x
 
-
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
