@@ -19,12 +19,14 @@ public class Bullet_Reflection :MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        //敵に当たると消滅(敵にダメージ)
-        if(collision.gameObject.CompareTag("Enemy"))
+        //敵,プレイヤーに当たると消滅(敵,自分にもダメージ)
+        if(collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
+
             return;
         }
+
 
         //壁以外
         if(!collision.gameObject.CompareTag("Wall"))
