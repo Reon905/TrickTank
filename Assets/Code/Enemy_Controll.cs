@@ -15,9 +15,6 @@ public class Enemy_Control:MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        //最初の回転方向を決める
-        targetRotate = Random.Range(-1f, 1f);
-
         Debug.Log("エネミー実行中");
     }
 
