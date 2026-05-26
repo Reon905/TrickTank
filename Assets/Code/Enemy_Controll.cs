@@ -21,7 +21,6 @@ public class Enemy_Control:MonoBehaviour
     private void Update()
     {
 
-
         if(hp == 0)
         {
             Destroy(gameObject);

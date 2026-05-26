@@ -7,12 +7,15 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;   //バレットのプレハブを入れておく変数
     public Transform firePoint;       //発射する場所?
     public float bulletSpeed = 80f;   //弾の速度
+    public int bullet_max = 5;        //弾上限
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+
+
         }
    
     }
