@@ -81,7 +81,7 @@ Transform:
   m_GameObject: {fileID: 1259712434839902029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.2, z: 77.8}
+  m_LocalPosition: {x: 0, y: -8.8, z: 77.8}
   m_LocalScale: {x: 20, y: 5, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749a128485d24a34b885fc424b64e647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 2
   speed: 50
 --- !u!114 &1954735475894872475
 MonoBehaviour:
@@ -215,6 +216,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3622961840069488844, guid: 6d48c94f7f5431248bb344c4b77c9aa0, type: 3}
   firePoint: {fileID: 5214297074133138876}
   bulletSpeed: 80
+  bullet_max: 5
 --- !u!1 &2477152995032492965
 GameObject:
   m_ObjectHideFlags: 0

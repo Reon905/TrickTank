@@ -153,7 +153,6 @@ GameObject:
   - component: {fileID: 1053250742214668299}
   - component: {fileID: 679570790129030521}
   - component: {fileID: 1769014771418872317}
-  - component: {fileID: 2833554152442147699}
   - component: {fileID: 6538068655224529078}
   m_Layer: 0
   m_Name: Enemy
@@ -171,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 4759745220375961045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.5, y: 3, z: 38.1}
+  m_LocalPosition: {x: 88.5, y: -8.8, z: 38.1}
   m_LocalScale: {x: 20, y: 5, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -252,18 +251,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2833554152442147699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759745220375961045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383231aa297471643817e5a822c2a835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!143 &6538068655224529078
 CharacterController:
   m_ObjectHideFlags: 0
