@@ -15,11 +15,11 @@ public class Rondom : MonoBehaviour
         while (true)
         {
             // 10秒後ごとにワープ移動する。
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(5f);
 
             // ランダムな値を取得する。
             float posX = Random.Range(-120, 120);
-            float posZ = Random.Range(-200, 200);
+            float posZ = Random.Range(-150, 150);
 
             transform.position = new Vector3(posX, 0, posZ);
         }
