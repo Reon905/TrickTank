@@ -27,7 +27,6 @@ public class Bullet_Reflection :MonoBehaviour
             return;
         }
 
-
         //壁以外
         if(!collision.gameObject.CompareTag("Wall"))
         {
@@ -62,6 +61,5 @@ public class Bullet_Reflection :MonoBehaviour
         bounceCount++;
 
         Debug.Log("Hit!");
-        Debug.Log("rb.lineaVelocity");
     }
 }
