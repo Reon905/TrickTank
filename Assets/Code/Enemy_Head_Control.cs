@@ -7,6 +7,8 @@ public class Enemy_Head_Control : MonoBehaviour
     public Transform firePoint;
 
     public float fireInterval = 1.0f;
+    public float turretRotateSpeed = 60f;//砲塔回転速度
+
     private float fireTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,7 +24,19 @@ public class Enemy_Head_Control : MonoBehaviour
 
         //プレイヤーの方向を向く
         Vector3 direction = player.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(direction);
+
+        //砲塔は水平回転をする
+        direction.y = 0;
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                turretRotateSpeed * Time.deltaTime);
+        }
 
         //発射タイマー
         fireTimer += Time.deltaTime;
