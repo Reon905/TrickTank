@@ -6,7 +6,7 @@ public class Bullet_Reflection :MonoBehaviour
 {
     private Rigidbody rb;
 
-    public int maxBounce = 3; //最大反射回数
+    public int maxBounce = 2; //最大反射回数
     private int bounceCount = 0;
 
     private void Start()

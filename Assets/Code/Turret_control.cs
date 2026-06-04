@@ -13,7 +13,12 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            if(bullet_max == 5)
+            {
+                Shoot();
+
+            }
+ 
 
 
         }

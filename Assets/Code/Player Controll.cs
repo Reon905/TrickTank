@@ -38,7 +38,7 @@ public class PlayerControll: MonoBehaviour
         if(Hp == 0)
         {
             Destroy(gameObject);
-            Debug.Log("ヤ ラ レ チ ャ ッ タ");
+            Debug.Log("ゲームオーバー!!");
         }
     }
 
