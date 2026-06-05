@@ -9,11 +9,22 @@ public class Bullet_Reflection :MonoBehaviour
     public int maxBounce = 2; //最大反射回数
     private int bounceCount = 0;
 
+    public Gun gun;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();//弾についているRigidbodyを取得する
 
         Destroy(gameObject, 5f);//弾の残留時間
+    }
+
+    private void OnDestroy()
+    {
+        if(gun != null)
+        {
+            gun.ReturnBullet();
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision collision)

@@ -7,20 +7,28 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;   //バレットのプレハブを入れておく変数
     public Transform firePoint;       //発射する場所
     public float bulletSpeed = 80f;   //弾の速度
-    public int bullet_max = 5;        //弾上限
+    
+    public int bullet_max = 5;        //最大弾数
+    private int currentBulletCount = 0;        //現在の弾数
+
+
+    private void Start()
+    {
+        currentBulletCount = bullet_max;
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(bullet_max == 5)
+            if( currentBulletCount <bullet_max )
             {
                 Shoot();
-
             }
- 
-
-
+            else
+            {
+                
+            }
         }
    
     }
@@ -39,9 +47,21 @@ public class Gun : MonoBehaviour
 
         //Rigidbody取得
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
         //前方向へ速度を与える
         rb.linearVelocity = direction * bulletSpeed;
 
+        //発射中の弾数を増やす
+        currentBulletCount++;
+
+        //BulletスクリプトにGunを渡す
+        bullet.GetComponent<Bullet_Reflection>().gun = this;
     }
+
+    //弾が消えたらBullet_Reflectionから呼ばれる
+    public void ReturnBullet()
+    {
+        currentBulletCount--;
+    }
+
+
 }
