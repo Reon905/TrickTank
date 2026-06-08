@@ -2,10 +2,10 @@
 
 using UnityEngine;
 
-public class Bullet_Reflection :MonoBehaviour
+public class Bullet_Reflection : MonoBehaviour
 {
     private Rigidbody rb;
-    private Renderer bulletRenderer;
+    private Renderer bulletRenderer;//Rendererを使うための変数名
 
     public int maxBounce = 2; //最大反射回数
     private int bounceCount = 0;
@@ -23,7 +23,7 @@ public class Bullet_Reflection :MonoBehaviour
 
     private void OnDestroy()
     {
-        if(gun != null)
+        if (gun != null)
         {
             gun.ReturnBullet();
             Destroy(gameObject);
@@ -34,7 +34,7 @@ public class Bullet_Reflection :MonoBehaviour
     {
 
         //敵,プレイヤーに当たると消滅(敵,自分にもダメージ)
-        if(collision.gameObject.CompareTag("Enemy")|| collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
 
@@ -42,15 +42,15 @@ public class Bullet_Reflection :MonoBehaviour
         }
 
         //弾同士で当たると相殺
-        if(collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
         }
-        
 
 
-        //壁以外
-        if(!collision.gameObject.CompareTag("Wall"))
+
+        //壁に当たったら反射
+        if (!collision.gameObject.CompareTag("Wall"))
         {
             return;
         }
