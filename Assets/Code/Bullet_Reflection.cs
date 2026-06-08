@@ -5,15 +5,18 @@ using UnityEngine;
 public class Bullet_Reflection :MonoBehaviour
 {
     private Rigidbody rb;
+    private Renderer bulletRenderer;
 
     public int maxBounce = 2; //最大反射回数
     private int bounceCount = 0;
 
+    public int damage = 1;
     public Gun gun;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();//弾についているRigidbodyを取得する
+        bulletRenderer = GetComponent<Renderer>();
 
         Destroy(gameObject, 5f);//弾の残留時間
     }
@@ -38,12 +41,21 @@ public class Bullet_Reflection :MonoBehaviour
             return;
         }
 
+        //弾同士で当たると相殺
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+        
+
+
         //壁以外
         if(!collision.gameObject.CompareTag("Wall"))
         {
             return;
         }
-        
+
+
         //接触点情報
         ContactPoint contact = collision.contacts[0];
 
@@ -70,6 +82,20 @@ public class Bullet_Reflection :MonoBehaviour
         rb.linearVelocity = new Vector3(reflect.x, rb.linearVelocity.y, reflect.z);
 
         bounceCount++;
+
+        //反射したときに弾の色を変える
+        switch (bounceCount)
+        {
+            case 1:
+                bulletRenderer.material.color = Color.yellow;
+                Debug.Log("反射1回目");
+                break;
+
+            case 2:
+                bulletRenderer.material.color = Color.red;
+                Debug.Log("反射2回目");
+                break;
+        }
 
         Debug.Log("Hit!");
     }

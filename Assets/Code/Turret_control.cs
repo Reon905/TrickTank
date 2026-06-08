@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-        currentBulletCount = bullet_max;
+        currentBulletCount = 0;
     }
 
     void Update()
@@ -62,6 +62,4 @@ public class Gun : MonoBehaviour
     {
         currentBulletCount--;
     }
-
-
 }

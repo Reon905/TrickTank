@@ -150,3 +150,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBounce: 2
+  damage: 1
+  gun: {fileID: 0}
