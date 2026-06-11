@@ -47,7 +47,7 @@ public class Bullet_Reflection : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
-            Debug.Log("相殺");
+            Debug.Log("Ps:相殺");
             return;
         }
 
@@ -58,7 +58,7 @@ public class Bullet_Reflection : MonoBehaviour
         {
             rb.linearVelocity = rb.linearVelocity.normalized * speed;//反射時の速度維持る
 
-            Debug.Log("壁に当たった");
+            Debug.Log("Ps:壁に当たった");
             return;
         }
 
