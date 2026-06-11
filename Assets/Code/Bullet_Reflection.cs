@@ -7,8 +7,9 @@ public class Bullet_Reflection : MonoBehaviour
     private Rigidbody rb;
     private Renderer bulletRenderer;//Rendererを使うための変数名
 
-    public int maxBounce = 2; //最大反射回数
+    public int maxBounce = 3; //最大反射回数
     private int bounceCount = 0;
+    private float speed;//反射時の速度変数
 
     public int damage = 1;
     public Gun gun;
@@ -18,6 +19,8 @@ public class Bullet_Reflection : MonoBehaviour
         rb = GetComponent<Rigidbody>();//弾についているRigidbodyを取得する
         bulletRenderer = GetComponent<Renderer>();
 
+        speed = rb.linearVelocity.magnitude;
+
         Destroy(gameObject, 5f);//弾の残留時間
     }
 
@@ -26,7 +29,6 @@ public class Bullet_Reflection : MonoBehaviour
         if (gun != null)
         {
             gun.ReturnBullet();
-            Destroy(gameObject);
         }
     }
 
@@ -45,6 +47,8 @@ public class Bullet_Reflection : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
+            Debug.Log("相殺");
+            return;
         }
 
 
@@ -52,34 +56,11 @@ public class Bullet_Reflection : MonoBehaviour
         //壁に当たったら反射
         if (!collision.gameObject.CompareTag("Wall"))
         {
+            rb.linearVelocity = rb.linearVelocity.normalized * speed;//反射時の速度維持る
+
+            Debug.Log("壁に当たった");
             return;
         }
-
-
-        //接触点情報
-        ContactPoint contact = collision.contacts[0];
-
-        //壁の法線
-        Vector3 normal = contact.normal;//壁の表面の向き
-
-        //XZ平面だけ使う(2D化)
-        normal.y = 0;
-
-        normal.Normalize();
-
-        Vector3 velocity = rb.linearVelocity;
-        velocity.y = 0;
-
-        //2D的な反射(XZ平面)　　　　　　　弾速維持を明確化
-        Vector3 reflect = Vector3.Reflect(velocity, normal);
-
-        reflect = reflect.normalized * velocity.magnitude;
-
-        //少し押し戻す
-        transform.position += normal * 0.05f;
-
-        //速度反映
-        rb.linearVelocity = new Vector3(reflect.x, rb.linearVelocity.y, reflect.z);
 
         bounceCount++;
 
@@ -97,6 +78,13 @@ public class Bullet_Reflection : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Hit!");
+        if(bounceCount > maxBounce)
+        {
+            Destroy(gameObject);
+            return;
+            Debug.Log("最大反射回数到達");
+        }
+
     }
+
 }

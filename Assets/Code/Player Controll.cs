@@ -28,12 +28,6 @@ public class PlayerControll: MonoBehaviour
 
         controller.SimpleMove(forward *  currentSpeed);
 
-        //マウスの座標取得(テスト)
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos = Input.mousePosition;
-            Debug.Log("x:" + mousePos.x + "    y:" + mousePos.y);
-        }
 
         if(Hp == 0)
         {
@@ -52,5 +46,10 @@ public class PlayerControll: MonoBehaviour
         }
 
     }
-
+        ////マウスの座標取得(テスト)
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector3 mousePos = Input.mousePosition;
+        //    Debug.Log("x:" + mousePos.x + "    y:" + mousePos.y);
+        //}
 };

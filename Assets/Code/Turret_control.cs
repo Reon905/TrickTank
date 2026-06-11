@@ -21,13 +21,13 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if( currentBulletCount <bullet_max )
+            if (currentBulletCount < bullet_max)
             {
                 Shoot();
             }
             else
             {
-                
+
             }
         }
    
