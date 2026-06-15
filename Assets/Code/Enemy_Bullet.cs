@@ -8,7 +8,7 @@ public class Enemy_Bullet:MonoBehaviour
     private float speed;
 
     public int damage = 1;
-    public Gun gun;
+    public Enemy_TurretControl etc;
 
     private void Start()
     {
@@ -21,9 +21,9 @@ public class Enemy_Bullet:MonoBehaviour
 
     private void OnDestroy()
     {
-        if(gun != null)
+        if(etc != null)
         {
-            gun.ReturnBullet();
+            etc.ReturnBullet();
         }
     }
 

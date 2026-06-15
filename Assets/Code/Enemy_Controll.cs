@@ -33,9 +33,9 @@ public class Enemy_Control:MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
-            hp--;
+            Bullet_Reflection bullet = collision.gameObject.GetComponent<Bullet_Reflection>();
 
-            Debug.Log("hpå∏è≠");
+            hp -= bullet.damege;
         }
     }
 

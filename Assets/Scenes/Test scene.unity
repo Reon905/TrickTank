@@ -216,8 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 140517450}
   random: {fileID: 69254105}
-  speed: 0
---- !u!114 &107547766
+  speed: 100.11
+--- !u!114 &107547772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,10 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 107547733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bff83f665b164de489df05c59e13c2c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 91ed18ee634befe4d8a8218324106b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 285904026260762242, guid: 17480c3a7e20caa4d8f0613ad93aee3a, type: 3}
+  bulletPurefab: {fileID: 285904026260762242, guid: 17480c3a7e20caa4d8f0613ad93aee3a, type: 3}
   firePoint: {fileID: 1863910135}
   bulletSpeed: 80
   bullet_max: 5
@@ -1268,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2908646365026659869, guid: 776ee0ec428d510459ade3a4832e66b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.93
+      objectReference: {fileID: 0}
     - target: {fileID: 4413844847093980955, guid: 776ee0ec428d510459ade3a4832e66b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 88.5
@@ -1327,7 +1331,7 @@ PrefabInstance:
       addedObject: {fileID: 107547760}
     - targetCorrespondingSourceObject: {fileID: 4759745220375961045, guid: 776ee0ec428d510459ade3a4832e66b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 107547766}
+      addedObject: {fileID: 107547772}
     - targetCorrespondingSourceObject: {fileID: 3741822092449042616, guid: 776ee0ec428d510459ade3a4832e66b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 251778915}

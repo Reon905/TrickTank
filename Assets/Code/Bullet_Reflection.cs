@@ -8,14 +8,15 @@ public class Bullet_Reflection : MonoBehaviour
     private Renderer bulletRenderer;//Rendererを使うための変数名
 
     public int maxBounce = 3; //最大反射回数
+    public int damege = 1;
     private int bounceCount = 0;
     private float speed;//反射時の速度変数
 
-    public int damage = 1;
     public Gun gun;
 
     private void Start()
     {
+
         rb = GetComponent<Rigidbody>();//弾についているRigidbodyを取得する
         bulletRenderer = GetComponent<Renderer>();
 
@@ -63,18 +64,22 @@ public class Bullet_Reflection : MonoBehaviour
         }
 
         bounceCount++;
+  
 
         //反射したときに弾の色を変える
         switch (bounceCount)
         {
             case 1:
                 bulletRenderer.material.color = Color.yellow;
+         
                 Debug.Log("反射1回目");
+                damege++;
                 break;
 
             case 2:
                 bulletRenderer.material.color = Color.red;
                 Debug.Log("反射2回目");
+                damege++;
                 break;
         }
 
