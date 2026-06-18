@@ -1,3 +1,4 @@
+//Enemy_TurretControl
 using UnityEngine;
 
 public class Enemy_TurretControl : MonoBehaviour
@@ -9,6 +10,8 @@ public class Enemy_TurretControl : MonoBehaviour
     public int bullet_max = 5;          //ç≈ëÂíeêî
     private int currentBulletCount = 0; //åªç›ÇÃíeêî
 
+    private float timer;
+
     private void Start()
     {
         currentBulletCount = 0;
@@ -16,14 +19,14 @@ public class Enemy_TurretControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            if (currentBulletCount < bullet_max)
-            {
-                Shoot();
-            }
+        timer += Time.deltaTime;
 
+        if(timer >= 1f && currentBulletCount < bullet_max)
+        {
+            Shoot();
+            timer = 0f;
         }
+
     }
 
     void Shoot()

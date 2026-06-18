@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2161743849909587244}
   m_Layer: 0
   m_Name: E_Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285904026260762242}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4a5aeb83cfae3274a9e15195e1941cef, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -151,4 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBounce: 2
   damage: 1
-  gun: {fileID: 0}
+  etc: {fileID: 0}

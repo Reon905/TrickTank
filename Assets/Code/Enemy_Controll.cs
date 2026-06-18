@@ -35,7 +35,14 @@ public class Enemy_Control:MonoBehaviour
         {
             Bullet_Reflection bullet = collision.gameObject.GetComponent<Bullet_Reflection>();
 
-            hp -= bullet.damege;
+            if(bullet != null)
+            {
+                hp -= bullet.damege;
+
+                Debug.Log("”í’e" + hp);
+
+                Destroy(collision.gameObject);
+            }
         }
     }
 

@@ -1,3 +1,4 @@
+//Enemy_Bullet
 using UnityEngine;
 
 public class Enemy_Bullet:MonoBehaviour
@@ -33,6 +34,9 @@ public class Enemy_Bullet:MonoBehaviour
         if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            //ƒvƒŒƒCƒ„[‚ªÁ–Å‚·‚é‚Æ‘Å‚Â‚Ì‚ğ‚â‚ß‚é
+           if(gameObject.CompareTag("Player"))
+
             return;
         }
 

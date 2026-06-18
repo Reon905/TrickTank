@@ -3,13 +3,7 @@ using UnityEngine;
 public class Enemy_Head_Control : MonoBehaviour
 {
     public Transform player;
-    public GameObject bulletPrehab;
-    public Transform firePoint;
-
-    public float fireInterval = 1.0f;
     public float turretRotateSpeed = 60f;//砲塔回転速度
-
-    private float fireTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,20 +31,6 @@ public class Enemy_Head_Control : MonoBehaviour
                 targetRotation,
                 turretRotateSpeed * Time.deltaTime);
         }
-
-        //発射タイマー
-        fireTimer += Time.deltaTime;
-
-        if(fireTimer >= fireInterval)
-        {
-            fireTimer = 0f;
-            shoot();
-        }
-    }
-
-    void shoot()
-    {
-        Instantiate(bulletPrehab, firePoint.position, firePoint.rotation);
     }
 
 }
