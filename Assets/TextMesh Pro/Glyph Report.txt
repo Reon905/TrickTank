@@ -1,7 +1,7 @@
 Font: Senobi Gothic  Style: Bold
-Point Size: 949   Padding: 0   SP/PD Ratio: 0.0%
+Point Size: 3391   Padding: 0   SP/PD Ratio: 0.0%
 
-Characters included: 166/167
+Characters included: 11/12
 Missing characters: 1
 Excluded characters: 0
 
