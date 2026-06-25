@@ -15,6 +15,8 @@ public class Enemy_Control:MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
+        GameMabager.enemyCount++;
+
         Debug.Log("エネミー実行中");
     }
 
@@ -23,6 +25,8 @@ public class Enemy_Control:MonoBehaviour
 
         if(hp <= 0)
         {
+            GameMabager.enemyCount--;
+
             Destroy(gameObject);
             Debug.Log("敵倒れた");
         }

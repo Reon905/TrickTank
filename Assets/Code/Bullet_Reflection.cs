@@ -74,12 +74,14 @@ public class Bullet_Reflection : MonoBehaviour
          
                 Debug.Log("反射1回目");
                 damege++;
+                Debug.Log("ダメージ増加(黄色)");
                 break;
 
             case 2:
                 bulletRenderer.material.color = Color.red;
                 Debug.Log("反射2回目");
                 damege++;
+                Debug.Log("ダメージ増加(赤)");
                 break;
         }
 

@@ -10,7 +10,7 @@ public class TitleManager : MonoBehaviour
         //Enterキーでシーン切り替え
         if(Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Test scene");
+            SceneManager.LoadScene("Game scene");
         }
     }
 }
