@@ -1,6 +1,7 @@
 //Player Controll.cs
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControll: MonoBehaviour
 {
@@ -29,10 +30,10 @@ public class PlayerControll: MonoBehaviour
         controller.SimpleMove(forward *  currentSpeed);
 
 
-        if(Hp == 0)
+        if(Hp <= 0)
         {
-            Destroy(gameObject);
             Debug.Log("ゲームオーバー!!");
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 

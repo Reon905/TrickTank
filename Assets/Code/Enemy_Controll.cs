@@ -10,6 +10,7 @@ public class Enemy_Control:MonoBehaviour
     private float changeDirectionTime = 2f;  //•ûŒü“]Š·‚·‚éŠÔŠu
     private float timer = 0f;
     private float targetRotate = 0f;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class Enemy_Control:MonoBehaviour
 
         GameMabager.enemyCount++;
 
-        Debug.Log("ƒGƒlƒ~[Às’†");
+        Debug.Log("“G¶¬ “G”:" + GameMabager.enemyCount);
     }
 
     private void Update()
@@ -25,6 +26,8 @@ public class Enemy_Control:MonoBehaviour
 
         if(hp <= 0)
         {
+            isDead = true;
+
             GameMabager.enemyCount--;
 
             Destroy(gameObject);
