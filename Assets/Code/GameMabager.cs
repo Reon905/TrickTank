@@ -5,6 +5,7 @@ public class GameMabager : MonoBehaviour
 {
     public static int enemyCount = 0; //“G‚Ì”‚ðƒJƒEƒ“ƒg‚·‚é
     private bool gameStarted = false;
+    private bool isClear = false;
 
     private void Start()
     {
@@ -16,15 +17,19 @@ public class GameMabager : MonoBehaviour
     {
         Debug.Log("UpdateŽÀs’†");
 
+        Debug.Log("enemyCount=" + enemyCount + "gameStarted " + gameStarted);
+
         if(enemyCount  > 0) //“G‚ª¶¬‚³‚ê‚Ä‚½‚çƒQ[ƒ€ŠJŽn
         {
             Debug.Log("enemyCount > 0");
             gameStarted = true;
         }
         
-        if(gameStarted && enemyCount <= 0)//“G‚ð“|‚µ‚½‚çƒNƒŠƒAƒV[ƒ“‚ÉˆÚ“®
+        if(gameStarted && enemyCount <= 0 && !isClear)//“G‚ð“|‚µ‚½‚çƒNƒŠƒAƒV[ƒ“‚ÉˆÚ“®
         {
-            Debug.Log("");
+            isClear = true;
+
+            Debug.Log("CLEAR");
             SceneManager.LoadScene("ClearScene");
         }
     }

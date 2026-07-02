@@ -24,14 +24,21 @@ public class Enemy_Control:MonoBehaviour
     private void Update()
     {
 
-        if(hp <= 0)
+        if(hp <= 0 && !isDead)
         {
             isDead = true;
 
             GameMabager.enemyCount--;
 
+            if(GameMabager.enemyCount < 0)
+            {
+                GameMabager.enemyCount = 0;
+            }
+
+            Debug.Log("“G“|‚ê‚½ “G”:" + GameMabager.enemyCount);
+
             Destroy(gameObject);
-            Debug.Log("“G“|‚ê‚½");
+            
         }
 
     }
