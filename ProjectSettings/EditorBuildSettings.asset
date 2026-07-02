@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage1 Scene.unity
     guid: 87ad22541ca0f024e8cdd46405f5a0f5
   - enabled: 1
+    path: Assets/Scenes/ClearScene.unity
+    guid: 8e782229e9a02af4c8417e3fed2bf006
+  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 3a91f224225eded4f9e5cb0c8a208b49
   - enabled: 1
-    path: Assets/Scenes/ClearScene.unity
-    guid: 8e782229e9a02af4c8417e3fed2bf006
+    path: Assets/Scenes/Stage2 Scene.unity
+    guid: f95e8d5bf32577542b9a3218abec7635
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

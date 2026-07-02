@@ -21,11 +21,8 @@ public class GameMabager : MonoBehaviour
             Debug.Log("enemyCount > 0");
             gameStarted = true;
         }
-
-        Debug.Log("enemyCount = " + enemyCount);
-        Debug.Log("gameStarted = " + gameStarted);
         
-        if(gameStarted && enemyCount <= 0)//“G‚ð“|‚µ‚½‚çƒNƒŠƒAƒV[ƒ“‚ÉˆÚ“®
+        if(gameStarted && enemyCount < 0)//“G‚ð“|‚µ‚½‚çƒNƒŠƒAƒV[ƒ“‚ÉˆÚ“®
         {
             Debug.Log("");
             SceneManager.LoadScene("ClearScene");
