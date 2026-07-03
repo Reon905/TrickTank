@@ -1,7 +1,8 @@
+//GameManager
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameMabager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public static int enemyCount = 0; //敵の数をカウントする
     public static int currentStage = 1;//現在のステージ番号

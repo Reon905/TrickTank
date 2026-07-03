@@ -16,9 +16,9 @@ public class Enemy_Control:MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        GameMabager.enemyCount++;
+        GameManager.enemyCount++;
 
-        Debug.Log("“G¶¬ “G”:" + GameMabager.enemyCount);
+        Debug.Log("“G¶¬ “G”:" + GameManager.enemyCount);
     }
 
     private void Update()
@@ -28,14 +28,14 @@ public class Enemy_Control:MonoBehaviour
         {
             isDead = true;
 
-            GameMabager.enemyCount--;
+            GameManager.enemyCount--;
 
-            if(GameMabager.enemyCount < 0)
+            if(GameManager.enemyCount < 0)
             {
-                GameMabager.enemyCount = 0;
+                GameManager.enemyCount = 0;
             }
 
-            Debug.Log("“G“|‚ê‚½ “G”:" + GameMabager.enemyCount);
+            Debug.Log("“G“|‚ê‚½ “G”:" + GameManager.enemyCount);
 
             Destroy(gameObject);
             

@@ -1,3 +1,4 @@
+//Next_stage.cs
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ public class Next_stage : MonoBehaviour
 
     public void NextStage()
     {
-        switch (GameMabager.currentStage)
+        switch (GameManager.currentStage)
         {
             case 1:
                 SceneManager.LoadScene("Stage2 Scene");
