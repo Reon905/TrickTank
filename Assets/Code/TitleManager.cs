@@ -3,14 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
-    [SerializeField] private string raceSceneName = "Test scene";//シーン名を入れる
-
-    private void Update()
+    public void StartGame()
     {
-        //Enterキーでシーン切り替え
-        if(Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("Stage1 Scene");
-        }
+        SceneManager.LoadScene("Stage1 Scene");
     }
 }

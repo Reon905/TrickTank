@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class GameMabager : MonoBehaviour
 {
     public static int enemyCount = 0; //敵の数をカウントする
+    public static int currentStage = 1;//現在のステージ番号
+
     private bool gameStarted = false;
     private bool isClear = false;
 
     private void Start()
     {
-        enemyCount = 0;        
+        enemyCount = 0;
 
     }
 
