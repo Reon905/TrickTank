@@ -8,11 +8,19 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+
+    public float atttackDistance = 8f;
+    public float attackInterval = 1.5f;
+
     public Transform Target;
     public Transform random;
     NavMeshAgent agent;
     bool sensor;
     public float speed;
+
+    private float attackTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +31,28 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sensor == false)
+        if (!sensor)
         {
-            agent.destination = random.transform.position;
+            agent.destination = random.position;
         }
         else
         {
-            agent.destination = Target.transform.position;
+            float distance = Vector3.Distance(transform.position, Target.position);
+
+            if(distance > atttackDistance)
+            {
+                //ƒvƒŒƒCƒ„[‚ð’Ç‚¢‚©‚¯‚é
+                agent.destination = Target.position;
+            }
+            else
+            {
+                //UŒ‚‚·‚é‚½‚ß’âŽ~
+                agent.ResetPath();
+
+                Attack();
+            }
         }
+
     }
 
     public void tuiseki()
@@ -49,6 +71,29 @@ public class EnemyScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+   void Attack()
+    {
+        attackTimer += Time.deltaTime;
+
+        if (attackTimer >= attackInterval)
+        {
+            attackTimer = 0;
+
+            ShootPlayer();
+        }
+    }
+
+    void ShootPlayer()
+    {
+        GameObject bullet =
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
+        Vector3 dir = (Target.position - firePoint.position).normalized;
+
+        rb.linearVelocity = dir * 10f;
     }
 }
 

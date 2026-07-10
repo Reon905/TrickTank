@@ -268,6 +268,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2376965608302250089, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2537467889230842638, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -315,6 +319,18 @@ PrefabInstance:
     - target: {fileID: 3693494880113699636, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787384059767274882, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5829394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787384059767274882, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
+      propertyPath: m_Center.y
+      value: 1.0778978
+      objectReference: {fileID: 0}
+    - target: {fileID: 3787384059767274882, guid: 58797a1a0521ed64fb949481c26eecf7, type: 3}
+      propertyPath: m_Center.z
+      value: -0.13955155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1399,6 +1415,22 @@ PrefabInstance:
     - target: {fileID: 1799247256496501501, guid: 40c721cb3ed2d164ab1ce6bf24a76a3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127575113179885200, guid: 40c721cb3ed2d164ab1ce6bf24a76a3c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521665692219841162, guid: 40c721cb3ed2d164ab1ce6bf24a76a3c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3803478
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521665692219841162, guid: 40c721cb3ed2d164ab1ce6bf24a76a3c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.97659856
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521665692219841162, guid: 40c721cb3ed2d164ab1ce6bf24a76a3c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.24810258
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
