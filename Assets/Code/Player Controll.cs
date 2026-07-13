@@ -7,7 +7,7 @@ public class PlayerControll: MonoBehaviour
 {
     public int Hp = 2;
     public  float speed = 40f;               //前進・後退する速さ
-    private float rotateSpeed = 0.03f;        //回転する速さ
+    public float rotateSpeed = 0.03f;        //回転する速さ
     private CharacterController controller;  //コンポーネントを保存する変数です
 
     private void Start()
