@@ -16,6 +16,8 @@ public class TitleManager2 : MonoBehaviour
     //スタートボタン押したとき
     public void OpenStageSelect()
     {
+        Debug.Log("Stageボタンが押されました");
+
         TitleCanvas.SetActive(false);
         StageSelectCanvas.SetActive(true);
     }
