@@ -1,5 +1,6 @@
 //Player Controll.cs
 
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,6 +38,11 @@ public class PlayerControll: MonoBehaviour
         }
     }
 
+    internal void Damage(int v)
+    {
+        throw new NotImplementedException();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
@@ -53,4 +59,4 @@ public class PlayerControll: MonoBehaviour
         //    Vector3 mousePos = Input.mousePosition;
         //    Debug.Log("x:" + mousePos.x + "    y:" + mousePos.y);
         //}
-};
+}

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager2 : MonoBehaviour
 {
     public static int enemyCount = 0; //敵の数をカウントする
-    public static int currentStage = 0;//現在のステージ番号
+    public static int currentStage = 2;//現在のステージ番号
 
     private bool gameStarted = false;
     private bool isClear = false;
@@ -22,13 +22,13 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("enemyCount=" + enemyCount + "gameStarted " + gameStarted);
 
-        if(enemyCount  > 0) //敵が生成されてたらゲーム開始
+        if (enemyCount > 0) //敵が生成されてたらゲーム開始
         {
             Debug.Log("enemyCount > 0");
             gameStarted = true;
         }
-        
-        if(gameStarted && enemyCount <= 0 && !isClear)//敵を倒したらクリアシーンに移動
+
+        if (gameStarted && enemyCount <= 0 && !isClear)//敵を倒したらクリアシーンに移動
         {
             isClear = true;
 
